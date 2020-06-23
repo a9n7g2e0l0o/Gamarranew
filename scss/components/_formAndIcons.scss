@@ -1,0 +1,108 @@
+// Formulario y icons de envio etc
+@import "mixinRepeat";
+
+$colorReed:red;
+$colorGrey:grey;
+$colorWhite:white;
+.main-form{
+    width: 100%;
+    height: 450px;
+    display: grid;
+    grid-template-rows: 300px 150px;
+    margin-bottom: 10px;
+    font-family:$fuenteDos;
+    .main-form__div{
+        display: grid;
+        grid-template-columns:50% 50%;
+        background: #ecf0f1;
+        // imagen de fondo del formulario
+        .main-form__div--img{
+            @include backgroundSizeRepeat(url(../img/pagPrincipal/28.jpg),82% 100%,no-repeat);
+            margin-left: 9%;
+        }
+        // cuadro del formulario
+        .main-form__div--form{
+            padding-right: 50px;
+            h1{
+                margin-top: 0ex;
+                margin-bottom: 5px;
+                font-size: 33px;
+                strong{
+                    font-size: 38px;
+                    font-weight: bold;
+                }
+            }
+            // formulario
+            .main-form__form{
+                margin-top: 25px;
+                input[type="text"]{
+                    @include inpForm(block);
+                    @include buttonRe(100%,48px,$colorGrey,10px,$colorWhite);
+                }
+                input[type="email"],.form-button{
+                    @include inpForm(inline-block);
+                    margin: 15px auto;
+                }
+                .form-button{
+                    @include buttonRe(20%,48px,$colorReed,5px,$colorReed);
+                    cursor: pointer;
+                    font-size: 20px;
+                    color: $colorWhite;
+                }
+                input[type="email"]{
+                    @include buttonRe(78%,48px,$colorGrey,10px,$colorWhite);
+                }
+                label{ 
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10px;
+                    color: #141414;
+                    font-family:$fuenteUno;
+                    input[type="checkbox"]{
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 10px;
+                    }
+                    span{
+                        font-size: 14px;
+                        margin-right: 3px;
+                    }
+                    a{
+                        font-size: 14px;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-form__icon{
+        width: 90%;
+        height: 100%;
+        margin: 0px auto;
+        @include gridTempColm_gap(grid,repeat(4,1fr),5px);
+        background: $colorUno;
+        .main-form__icon--div{
+            width: 95%;
+            height: 90px;
+            margin: auto;
+            a{
+                @include gridTempColm_gap(grid,35% 65%,5px);
+                align-items: center;
+                text-decoration: none;
+                background: $colorTres;
+                i{
+                    margin: 10px auto;
+                    font-size: 4.2rem;
+                    color: #c0392b;
+                }
+                span{
+                    font-size: 17px;
+                    font-weight: bold;
+                    margin-right: 10px;
+                    color: #2d3436;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+$NZIndex:100;
+// fondo degradado o desvanecido de los iconos
+.cover-search{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: $NZIndex;
+}

@@ -1,0 +1,244 @@
+
+$fuenteUno:'Public Sans', sans-serif;
+$fuenteDos:'Oswald', sans-serif;
+$string:none;
+$auto:auto;
+$cero:0px;
+$cien:100%;
+$cincuenta:50%;
+$noRepeat:no-repeat;
+$colorUno:white;
+$colorDos:#b2bec3;
+$colorTres:#FDF8F8;
+$colorCuatro:#dfe6e9;
+$colorCinco:#171616;
+$colorSeis:#2d3436 ;
+$colorSiete:#d63031;
+$cursor: pointer;
+
+@mixin flexAlignJustifyDireccion ($display,$align,$content:$string,$direction:$string) {
+    display:$display;
+    align-items:$align;
+    justify-content: $content;
+    flex-direction:$direction;
+}
+
+@mixin gridTempColm_gap($grid,$tempColum:$string,$colGap:$string,$tempRows:$string) {
+    display:$grid;
+    grid-template-columns:$tempColum;
+    column-gap:$colGap;
+    grid-template-rows: $tempRows;
+}
+
+
+@mixin backgroundSizeRepeat($background,$size:$auto,$repeat:$noRepeat) {
+    background:$background;
+    background-size:$size;
+    background-repeat:$repeat;
+}
+
+
+
+// Button de VER TODO Recomendados y nuevo lanzamiento
+$anchoRecom:96%;
+$marginRecom:30px auto;
+$marginBottomRecom:40px;
+
+@mixin verTodoR($width:$anchoRecom,$margin:$marginRecom,$bottom:$marginBottomRecom){
+    
+
+    .main-recomended__title--and__newTitle{
+        width:$width;
+        height: 50px;
+        margin:$margin;
+        margin-bottom: $bottom;
+        @include flexAlignJustifyDireccion(flex,center,space-between,row);
+        div{
+            height: 100%;
+            margin: 0 5px;
+            @include flexAlignJustifyDireccion(flex,center);
+            h2{
+                font-family:$fuenteDos;
+                font-size: 28px;
+            }
+        }
+        .recomended--and__newTitle__verTodo{
+            height: 80%;
+            width: 130px;
+            border-radius: 5px;
+            background:$colorTres;
+            a{ 
+                text-decoration: $string;
+                color: $colorDos;
+                font-family: $fuenteUno;
+                span{
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-left: 18px;
+                    margin-right: 12px;
+                }
+                i{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+// Repeat before
+
+@mixin beforeLineR($fondo){
+    &::before{
+        content:'';
+        width:100%;
+        height: 0px ;
+        background:$fondo;
+        position: absolute;
+        top: 44px;
+        transition: 200ms ease;
+    }
+
+    &:hover::before{
+        height: 3.2px;
+    }
+    
+}
+// repeat word after and before
+@mixin aYbRigBottHeigTopBLefWidTopA_R($right,$bottom,$height,$topBef,$left,$width,$topAft){
+    
+    &{
+        transform: rotate(-90deg);
+        font-size: 61px;
+        font-weight: bold;
+        display: inline-block;
+        position: relative;
+        right:$right;
+        bottom:$bottom;
+        color: $colorUno;
+    }
+    &::after,&::before{
+        content:'';
+        background: $colorUno;
+        position: absolute;
+    }
+    &::before{
+        width: 4px;
+        height:$height;
+        top:$topBef;
+        left:$left;
+        
+    }
+    &::after{
+        height: 4px;
+        width:$width;
+        top:$topAft;
+    }
+}
+
+
+@mixin  inpForm($dis) {
+    display: $dis;
+    background: none;
+    border: none;
+    outline: none;
+    padding: none;
+}
+
+
+@mixin buttonRe($width,$height,$coloGrey,$left,$fondo){
+    width:$width;
+    height:$height;
+    border: 1px solid $coloGrey;
+    padding-left:$left;
+    border-radius: 5px;
+    font-weight: bold;
+    background: $fondo;
+}
+
+
+// cuadro al aldo de la portada
+@mixin imgNext ($fondo,$fondoDos,$fondoTres,$fondoCuatro){
+    &{
+        .aUnoNext{
+            text-decoration: none;
+            
+            .divUno--img{
+                background:$fondo;
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+            .divDos--img{
+                background: $fondoDos;
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+            .divTres--img{
+                background: $fondoTres;
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+            .divCuatro--img{
+                background: $fondoCuatro;
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }        
+            // cuadro de precios o monto en la parte inferior 
+            .divUno--monto{
+                text-decoration: none;
+                font-family: $fuenteDos;
+              //  width: 280px;
+                background: $colorTres;
+                strong{
+                    display: block;
+                    color:$colorCinco;
+                    font-size: 20px;
+                    margin-top: 10px;
+                }
+                span{
+                    color: $colorSeis;
+                    display: block;
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                }
+                div{
+                    display: grid;
+                    grid-template-rows:repeat(2,1fr);
+                    // div para alinear los precios antes y online
+                    div{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding:none;
+                        height: 28px;
+                    }
+                        // div de el mondo o precio ANTES
+                    .samsaAntes{
+                        em{
+                            text-decoration-line:line-through;
+                            color:$colorDos;
+                            font-style: normal;
+                        }
+                    }
+                    .samsaOnline{
+                        
+                        span{
+                            color: $colorCinco;
+                            font-weight: bold;
+                        }
+                        em{
+                            color: $colorSiete;
+                            font-style: normal;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+
+
+
+

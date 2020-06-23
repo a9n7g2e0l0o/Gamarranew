@@ -1,0 +1,95 @@
+ $NZIndex:100;
+ // cuadro de busqueda
+    .main-search__shopping{
+        background: #fff;
+        width: 100%;
+        height: 200px;
+        font-family: 'Public Sans', sans-serif;
+        position: relative;
+        top: -200px;
+        border-top: 5px solid #2d3436;
+        z-index: $NZIndex;
+        position: fixed;
+        transition: all 600ms ease;
+       
+        .main-search__shopping--input{
+            display: flex;
+            align-items: center;
+            width: 86%;
+            height: 70px;
+            div{ 
+                display: flex;
+                justify-content: space-between;
+                border: 1px solid #b2bec3;
+                background: #fcfcfc;
+                margin-left: 60px;
+                width: 100%;
+                height: 42px;
+                input{
+                    background: #fcfcfc;
+                    border: none;
+                    outline: none;
+                    width: 95%;
+                    margin-left: 20px;
+                    color: #111010;
+                    font-size: 22px;
+                }
+                i{
+                    font-size: 25px;
+                    margin: auto 5px;
+                }
+            }
+        }
+        .main-serch__shopping--icons{
+            width: 80%;
+            height: 115px;
+            margin: auto auto;
+            display: flex;
+            div{
+                display: flex;
+                flex-direction: column;
+                height: 107px;
+                width: 110px;
+                margin: 0px 25px;
+                a{
+                    text-align:center;
+                    padding-top: 10px;
+                    width: 80%;
+                    height: 75px;
+                    border-radius: 5px;
+                    margin: auto auto;
+                    background: #f5f6fa;
+                    transition: 300ms ease;
+                    font-size: 50px;
+                    color: #2d3436;
+                    
+                }
+                span{
+                    margin-top: 10px;
+                    text-align: center;
+                    font-size: 15px;
+                }
+                a:hover{
+                    background: #2d3436;
+                    color: white;
+                }
+            }
+            
+        }
+        // icono de X 
+        .xTimes{
+            display: none;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 45px;
+            top: 27px;
+            font-size: 28px;
+            color: #2d3436;
+            cursor: pointer;
+            transition: 1s ease-in-out;
+        }
+        .xTimes:hover{
+            color: #636e72;
+        }    
+    }

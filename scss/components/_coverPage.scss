@@ -1,0 +1,205 @@
+// portada y imagenes de al lado de la misma y ofertas 
+
+@import "mixinRepeat";
+
+$colorRedd:#EE0F0F;
+$borderAfter: 4px solid white;
+$nZindex:30;
+$nZindesArrow:35;
+$nZindexNext:15;
+.main-square{
+    width: 100%;
+    height: 2120px;
+    margin-bottom: 0px;
+    background: $colorUno;
+    font-family:$fuenteDos;
+    .main-square__inside{
+        width: 94%;
+        height: 470px;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns:629px 1260px;    //$temCom;
+        column-gap: 10px;
+        overflow: hidden;
+        .main-square__inside--covePage{
+            z-index: $nZindex;
+            background: white;
+            // cuadro de la portada o marco
+            .main-square__inside--covePageImg{
+                border: 1px solid $colorUno;
+                width: 98%;
+                height: 390px;
+                margin: auto;
+                cursor: $cursor;
+                div{ 
+                    border-top:$borderAfter;
+                    border-right:$borderAfter;
+                    width: 93%;
+                    height: 90%;
+                    margin: 20px auto;
+                    @include flexAlignJustifyDireccion(flex,flex-end,$string);
+
+                    // Primera palabra en vertical
+                    .word-column__uno{
+                        @include aYbRigBottHeigTopBLefWidTopA_R(1.6em,1.5rem,763.7%,62px,5px,66.4%,1.5rem);
+                    }
+                    // segunda palabra
+                    .word-column__dos{ 
+                        @include aYbRigBottHeigTopBLefWidTopA_R(2.08em,3.6rem,764.5%,62px,2px,29.5%,25px);
+                    }
+                    //tercero
+                    .word-column__tres{
+                        @include aYbRigBottHeigTopBLefWidTopA_R(1em,-2px,760%,62px,-1px,138.5%,1.4rem);
+                    }
+                    // cuarto
+                    .word-column__cuatro{
+                        @include aYbRigBottHeigTopBLefWidTopA_R(1.6em,1.8rem,764.5%,63px,0px,66.5%,25px);
+                    }
+                    
+                }
+            }
+            // imagen de las portadas 
+            .main-square__uno--covePageimg{
+               // background: url(../img/25.jpg) no-repeat 100%; (no me funciono)
+                @include  backgroundSizeRepeat(url(../img/pagPrincipal/25.jpg),$cien);
+            }
+            .main-square__dos--covePageimg{
+                @include backgroundSizeRepeat(url(../img/pagPrincipal/ricolas.jpg),115%)
+            }
+            .main-square__tres--covePageimg{
+                @include backgroundSizeRepeat(url(../img/pagPrincipal/19.jpg),$cien);
+            }
+            .main-square__cuatro--covePageimg{
+                @include backgroundSizeRepeat(url(../img/pagPrincipal/27.jpg),112%);
+            }
+
+            // edit button
+            .link-footer{
+                margin: 15px auto;
+                width: 150px;
+                height: 40px;
+                cursor: pointer;
+                background: $colorRedd;
+                @include flexAlignJustifyDireccion(flex,center,center);
+                border-radius: 5px;
+                a{
+                    text-decoration: $string;
+                    color: $colorUno;
+                    font-size: 20px;
+                    i{
+                        margin-left: 8px;
+                    }
+                }
+                
+            }
+            
+        }
+
+        // cuadro al lado de la portada 
+        .main-square__inside--nextCovePage{
+            i{
+                z-index: $nZindesArrow;
+                position: absolute;
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                background: #ffffff;
+                border:1px solid  #ecf0f1;
+                color: #2d3436;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            i:hover{
+                background:  #2d3436;
+                color:white;
+                border:1px solid #2c3e50;
+            }
+            // todos los tag a al lado de la portada
+            .contenido--sliderTagA{
+                @include gridTempColm_gap(grid,repeat(4,1fr),15px);
+                height: 100%;
+                a{
+                    display: none;
+                    grid-template-rows: 74% 26%;
+     
+                }      
+                .active{
+                    display: grid;
+                }
+            }  
+                
+        }
+        .main-square__uno--next{
+            i{
+                top:89em;
+            }
+            .iconLeft{
+                left: 41em;
+
+             }
+             .iconRight{
+                 right: 30px;
+             }
+            .contenido--sliderTagA{
+                @include imgNext(url(../img/pagPrincipal/16.jpg),url(../img/pagPrincipal/18.jpg),url(../img/pagPrincipal/chompa-mujer.webp),url(../img/pagPrincipal/deporMujer.jpg));                   
+            }   
+        }
+        .main-square__dos--next{
+            i{
+                top:122em;
+            }
+            .iconLeft{
+                left: 20px;
+
+             }
+             .iconRight{
+                 right: 41em;
+             }
+             .contenido--sliderTagA{
+                @include imgNext(url(../img/pagPrincipal/33.jpg),url(../img/pagPrincipal/32.jpg),url(../img/pagPrincipal/deporHombre.jpg),url(../img/pagPrincipal/serio.jpg));
+             }
+
+        }
+        .main--square__tres--next{
+            i{
+                top:153.5em;
+            }
+            .iconLeft{
+                left: 41em;
+
+             }
+             .iconRight{
+                 right: 30px;
+             }
+             .contenido--sliderTagA{
+               @include imgNext(url(../img/pagPrincipal/13.jpg),url(../img/pagPrincipal/29.jpg),url(../img/pagPrincipal/niño-model.jpg),url(../img/pagPrincipal/niña-model.jpg));
+             }
+        }
+        .main--square__cuatro--next{
+            i{
+                top:187em;
+            }
+            .iconLeft{
+                left: 20px;
+
+             }
+             .iconRight{
+                 right: 41em;
+             }
+             .contenido--sliderTagA{
+                @include imgNext(url(../img/pagPrincipal/31.jpg),url(../img/pagPrincipal/mujer-deporteee.jpg),url(../img/pagPrincipal/deporte-hombreee.jpg),url(../img/pagPrincipal/34.jpg));
+             }
+        }
+
+    }
+    .main--square__insideDosCuatro{
+        grid-template-columns:1260px 629px;    //$temCom;
+        .main-square__inside--covePage{
+            position: relative;
+            right:635px;
+        }
+    }
+    
+}

@@ -1,0 +1,64 @@
+// recomendado
+$color1:#292929;
+$color2:#FDF8F8;
+$color3:#F1F1F1;
+@import "mixinRepeat";
+
+.main-recommended{
+    margin-top:70px;
+    width: 100%;
+    height: 600px;
+    font-family: $fuenteUno;
+    div{
+        // mixin repeat
+        @include verTodoR();
+
+        .main-recommended__div{
+            width: 95%;
+            height: 450px;
+            margin: auto;
+            @include gridTempColm_gap(grid,repeat(4,1fr),20px);
+            .recommendedStyleSquare{
+                justify-content: center;
+                text-decoration: $string;
+                color: $color1;
+                div{
+                    width: 100%;
+                    height: 79%;
+                }
+                .recommended-SpanStrong{
+                    width: 100%;
+                    height: 21%;
+                    padding-top: 15px;
+                    padding-left: 15px;
+                    background: $color2;
+                    span{
+                        display: block;  
+                        font-size: 18px;          
+                    }
+                    strong{
+                        font-family: $fuenteDos;
+                        display:block;
+                        margin-top: 8px;
+                        font-size: 30px;
+                    }
+                }
+                .recommended__div__square--1{
+                    @include backgroundSizeRepeat(url(../img/pagPrincipal/9.jpg));
+                }
+                .recommended__div__square--2{
+                    @include backgroundSizeRepeat(url(../img/pagPrincipal/6.jpg),$cien);
+                    border: 1px solid $color3;
+                }
+                .recommended__div__square--3{
+                    @include backgroundSizeRepeat(url(../img/pagPrincipal/8.jpg),$cien)
+                }
+                .recommended__div__square--4{
+                    @include backgroundSizeRepeat(url(../img/pagPrincipal/11.jpg),$cien)
+                }
+                
+            }            
+        }
+    }
+}
+

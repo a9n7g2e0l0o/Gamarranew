@@ -1,0 +1,93 @@
+
+// variables
+
+$color1:rgba(45, 52, 54,1.0);
+$tiempo: all 100ms ease;
+$ZIndex:100;
+
+@import "mixinRepeat";
+// contenido
+header{
+    transition:$tiempo;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: $ZIndex;
+    font-family:$fuenteUno;
+    .main-content{
+        width: 100%;
+        display: flex;
+        background: #fff;
+        border-bottom: 1px solid  #ecf0f1;
+        .logo{
+            height: 70px;
+            width: 150px;
+            background: url(../img/pagPrincipal/samsa.jpg);
+            background-size: 118% 122%;
+            background-repeat: no-repeat;
+            align-items: center;
+            margin:0px 50px
+        }
+        .main-menu{
+            margin: auto 0px;
+            margin-left: 85px;
+            margin-right: 60px;
+            width: 48%;
+            nav{
+                height: 100%;
+                ul{
+                    @include flexAlignJustifyDireccion(flex,$string,right);
+                    .main-menu__item{
+                        list-style: $string;
+                        margin-right: 43px;
+                        position: relative;
+                        font-family:$fuenteDos;
+                        .main-menu__link{
+                            text-decoration: $string;
+                            font-size: 18px;
+                            color: $color1;
+                        }
+                        @include beforeLineR(red);
+                    }
+                   
+                }
+            }
+        }
+        .main-content__iconsNav{
+            @include flexAlignJustifyDireccion(flex,center);
+            width: 245px;
+            div{
+                border-left: 1px solid $colorCuatro;
+                cursor: $cursor;
+                height: 100%;
+                width: 81px;
+                @include flexAlignJustifyDireccion(flex,center,center,column);
+                color: $color1;
+                i{
+                    font-size: 30px;
+                }
+                span{
+                    margin-top: 10px;
+                    font-size: 15px;
+                }
+            }
+            .main-car{
+                border-right: 1px solid $colorCuatro;
+                a{
+                    text-align: center;
+                    text-decoration: none;
+                    color: $color1;
+                    i{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+// 
+
+

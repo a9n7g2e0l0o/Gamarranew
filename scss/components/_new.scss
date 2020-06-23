@@ -1,0 +1,54 @@
+// Nuevos lanzamientos
+
+@import "mixinRepeat";
+
+.new{
+    width: 100%;
+    height: 360px;
+    margin-bottom: 10px;
+    .new-div{
+       
+        @include verTodoR(92%,10px auto,30px);
+        .new-div__img{
+            width: 91%;
+            height: 240px;
+            margin: auto;
+            @include gridTempColm_gap(grid,repeat(3,1fr),30px);
+            a{
+                height: 100%;
+                text-decoration: none;
+                display: flex;
+                align-items: flex-end;
+                font-family:$fuenteDos;
+                span{
+                    margin-left: 40px;
+                    margin-bottom: 35px;
+                    display: block;
+                    font-size: 30px;
+                    font-weight: bold; 
+                    color:$colorUno;                 
+                    em{
+                        font-style: normal;
+                        display: block;
+                        strong{
+                            font-family:$fuenteDos;
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+            // imagen uno
+            .new-div__imgUno{
+                @include backgroundSizeRepeat(url(../img/pagPrincipal/22.jpg),$cien);
+            }     
+            // imagen dos     
+            .new-div__imgDos{
+                @include backgroundSizeRepeat(url(../img/pagPrincipal/26.jpg),$cien);
+            }
+            // imagen tres
+            .new-div__imgTres{
+                @include backgroundSizeRepeat(url(../img/pagPrincipal/24.jpg));
+            }
+        }
+    }
+}
